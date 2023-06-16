@@ -50,5 +50,4 @@ INSERT OVERWRITE DIRECTORY 'output'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 SELECT c2, concat_ws(':', collect_set(CAST(c1 AS string))) AS c1_values
 FROM tbl0
-GROUP BY c2
-ORDER BY c1_values;
+GROUP BY c2;
